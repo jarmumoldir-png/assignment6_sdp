@@ -3,6 +3,7 @@ package com.library.visitor.visitors;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
+import com.library.model.Audiobook;
 import com.library.model.Book;
 import com.library.model.EBook;
 import com.library.model.Journal;
@@ -40,4 +41,5 @@ public final class FineCalculator implements LibraryVisitor<Double> {
         long days = ChronoUnit.DAYS.between(l.getDueDate(), today);
         return days * dailyRate;
     }
+    @Override public Double visit(Audiobook a) { return 0.0; }
 }

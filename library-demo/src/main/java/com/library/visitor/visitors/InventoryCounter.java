@@ -3,6 +3,7 @@ package com.library.visitor.visitors;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.library.model.Audiobook;
 import com.library.model.Book;
 import com.library.model.EBook;
 import com.library.model.Journal;
@@ -43,4 +44,6 @@ public final class InventoryCounter implements LibraryVisitor<Void> {
     public int getJournals() { return journals; }
     public int getEbooks()   { return ebooks; }
     public Map<String, Integer> getPerSection() { return Map.copyOf(perSection); }
+
+    @Override public Void visit(Audiobook a) { return null; }
 }

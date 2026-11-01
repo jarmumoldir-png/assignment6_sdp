@@ -3,6 +3,7 @@ package com.library.visitor.visitors;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.library.model.Audiobook;
 import com.library.model.Book;
 import com.library.model.EBook;
 import com.library.model.Journal;
@@ -40,4 +41,6 @@ public final class LateFeeAuditVisitor implements LibraryVisitor<Void> {
     @Override public Void visit(EBook e) { return null; }
 
     public Map<String, Double> getFeesBySection() { return Map.copyOf(feesBySection); }
+
+    @Override public Void visit(Audiobook a) { return null; }
 }

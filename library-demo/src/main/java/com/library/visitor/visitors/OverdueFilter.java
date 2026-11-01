@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.library.model.Audiobook;
 import com.library.model.Book;
 import com.library.model.EBook;
 import com.library.model.Journal;
@@ -35,4 +36,5 @@ public final class OverdueFilter implements LibraryVisitor<List<Loan>> {
     @Override public List<Loan> visit(Loan l) {
         return l.isOverdue(today) ? List.of(l) : List.of();
     }
+    @Override public List<Loan> visit(Audiobook a) { return List.of(); }
 }

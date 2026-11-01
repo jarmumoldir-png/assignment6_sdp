@@ -1,5 +1,6 @@
 package com.library.visitor;
 
+import com.library.model.Audiobook;
 import com.library.model.Book;
 import com.library.model.EBook;
 import com.library.model.Journal;
@@ -14,4 +15,5 @@ public interface LibraryVisitor<R> {
     R visit(Journal journal);
     R visit(EBook ebook);
     R visit(Loan loan);
+    R visit(Audiobook audiobook);
 }

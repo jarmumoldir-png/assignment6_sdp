@@ -1,5 +1,6 @@
 package com.library.visitor.visitors;
 
+import com.library.model.Audiobook;
 import com.library.model.Book;
 import com.library.model.EBook;
 import com.library.model.Journal;
@@ -55,5 +56,9 @@ public final class CatalogJsonExporter implements LibraryVisitor<String> {
 
     private static String esc(String s) {
         return s.replace("\\", "\\\\").replace("\"", "\\\"");
+    }
+
+    @Override public String visit(Audiobook a) {
+        return "{\"type\":\"audiobook\",\"isbn\":\"" + esc(a.getIsbn()) + "\",\"title\":\"" + esc(a.getTitle()) + "\"}";
     }
 }
